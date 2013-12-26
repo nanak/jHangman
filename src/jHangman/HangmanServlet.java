@@ -13,8 +13,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class HangmanServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private HangmanModel hm;
-	private int hangmanState;
+
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -22,13 +21,6 @@ public class HangmanServlet extends HttpServlet {
     public HangmanServlet() {
         super();
         // TODO Auto-generated constructor stub
-    }
-
-    /**
-	 * 
-	 */
-    private void gamelogic(){
-
     }
     
 	/**
@@ -44,14 +36,6 @@ public class HangmanServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 	}
-	
-	/**
-	 * 
-	 */
-	public int getHangmanState(){
-		return hangmanState;
-	}
-	
 	
 
 }

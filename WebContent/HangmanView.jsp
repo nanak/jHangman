@@ -4,23 +4,24 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<basefont face="courier">
 <title>Insert title here</title>
 </head>
 <body>
-<%@ page import = "jHangman.HangmanServlet" %>
+<%@ page import = "jHangman.HangmanGamelogic" %>
 <%
-HangmanServlet hs = new HangmanServlet();
-int hangmanState = hs.getHangmanState();
+HangmanGamelogic hgl = new HangmanGamelogic();
+int hangmanState = hgl.getHangmanState();
 %>
 <% if (hangmanState == 0) { %>
-     _________   
-     |/      |   
-     |           
-     |           
-     |           
-     |           
-     |           
-    _|___        
+     _________   <br>
+     |/      |   <br>
+     |           <br>
+     |           <br>
+     |           <br>
+     |           <br>
+     |           <br>
+    _|___        <br>
 <% } %>
 <% if (hangmanState == 1) { %>
      _________   
