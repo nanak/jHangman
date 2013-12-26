@@ -13,25 +13,74 @@ HangmanServlet hs = new HangmanServlet();
 int hangmanState = hs.getHangmanState();
 %>
 <% if (hangmanState == 0) { %>
-    <h1>INSERT HANGMAN STATES HERE</h1>
+     _________   
+     |/      |   
+     |           
+     |           
+     |           
+     |           
+     |           
+    _|___        
 <% } %>
 <% if (hangmanState == 1) { %>
-    <h1>INSERT HANGMAN STATES HERE</h1>
+     _________   
+     |/      |   
+     |      (_)  
+     |           
+     |           
+     |           
+     |           
+    _|___        
 <% } %>
 <% if (hangmanState == 2) { %>
-    <h1>INSERT HANGMAN STATES HERE</h1>
+     _________   
+     |/      |   
+     |      (_)  
+     |       |   
+     |       |   
+     |           
+     |           
+    _|___        
 <% } %>
 <% if (hangmanState == 3) { %>
-    <h1>INSERT HANGMAN STATES HERE</h1>
+     _________   
+     |/      |   
+     |      (_)  
+     |      \|   
+     |       |   
+     |           
+     |           
+    _|___        
 <% } %>
 <% if (hangmanState == 4) { %>
-    <h1>INSERT HANGMAN STATES HERE</h1>
+     _________   
+     |/      |   
+     |      (_)  
+     |      \|/  
+     |       |   
+     |           
+     |           
+    _|___        
 <% } %>
 <% if (hangmanState == 5) { %>
-    <h1>INSERT HANGMAN STATES HERE</h1>
+     _________   
+     |/      |   
+     |      (_)  
+     |      \|/  
+     |       |   
+     |      /    
+     |           
+    _|___        
 <% } %>
 <% if (hangmanState == 6) { %>
-    <h1>INSERT HANGMAN STATES HERE</h1>
+     _________   
+     |/      |   
+     |      (_)  
+     |      \|/  
+     |       |   
+     |      / \  
+     |           
+    _|___        
 <% } %>
 
 </body>
