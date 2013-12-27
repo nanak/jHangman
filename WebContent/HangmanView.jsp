@@ -13,9 +13,8 @@ html *
 <title>Se beste Hangman in se W&ouml;ald</title>
 </head>
 <body>
-<h1>Willkommen to se beste Hangman Gejm in se W&ouml;rld!</h1>
+<h1>Willkommen to se beste Hangman Gejm in se W&ouml;ald!</h1>
 <% 
-//int hangmanState = (Integer)request.getAttribute("hangmanState"); 
 int hangmanState=Integer.parseInt(request.getAttribute("hangmanState").toString());
 %> 
 <% if (hangmanState == 0) { %>
@@ -85,6 +84,11 @@ _|___<br>
 <h6>Illegal Hangman State</h6>
 <% } %>
 
+<% String word = request.getAttribute("hiddenWord").toString();%>
+
+<%=word%>
+<br>
+<br>
 Enter a letter
 <form class="post_form" action="HangmanServlet" method="post">
 	<input id="post_text" name="post_text" type="text" size="1" maxlength="1"/>
