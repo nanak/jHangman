@@ -13,8 +13,8 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class HangmanServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private HangmanModel hm = new HangmanModel();
-	private HangmanGamelogic hg = new HangmanGamelogic();
+	private HangmanModel hm;
+	private HangmanGamelogic hg;
 	private int hangmanState;
 
        
@@ -23,13 +23,13 @@ public class HangmanServlet extends HttpServlet {
      */
     public HangmanServlet() {
         super();
-//        HangmanGamelogic hgl = new HangmanGamelogic();
-        HangmanModel hm = new HangmanModel();
-//        hangmanState = hm.getHangmanState();
         this.initialize();
     }
     
     private void initialize(){
+    	hm = new HangmanModel();
+    	hg = new HangmanGamelogic();
+    	hangmanState = 0;
     	try {
 			hm.readWordList();
 		} catch (FileNotFoundException e) {
@@ -52,6 +52,12 @@ public class HangmanServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //		request.setAttribute("hangmanState", hm.getHangmanState());
 //		request.getRequestDispatcher("HangmanView.jsp").forward(request, response);
+		String isReset = (request.getParameter("get_reset"));
+//		if(isReset != null && isReset == "Reset")
+//			this.initialize();
+		if (request.getParameter("reset") != null) {
+            this.initialize();
+		}
 		communicate(request, response);
 	}
 
@@ -71,9 +77,6 @@ public class HangmanServlet extends HttpServlet {
     			hm.setHiddenWord(result);
     		}
 		}
-		String isReset = (request.getParameter("post_reset"));
-		if(isReset != null && isReset == "Reset")
-			this.initialize();
 
 //        request.setAttribute("hangmanState", hm.getHangmanState());
 //        request.getRequestDispatcher("HangmanView.jsp").forward(request, response);

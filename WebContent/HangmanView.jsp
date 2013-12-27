@@ -97,7 +97,9 @@ Enter a letter
 	<input id="post_text" name="post_text" type="text" size="1" maxlength="1"/>
 	<input type=submit value="Send"/>
 </form>
-	<input type="submit" value="Reset" action="HangmanServlet" id="post_reset"/>
+<form class="get_reset" action="HangmanServlet" method="get">
+	<input type="submit" value="Reset" name="reset" id="get_reset"/>
+</form>
 
 </body>
 </html>
