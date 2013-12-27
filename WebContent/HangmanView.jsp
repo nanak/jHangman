@@ -82,6 +82,10 @@ _|___<br>
 &nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/ \<br>
 &nbsp;|<br>
 _|___<br>
+<% } else if (hangmanState == 7) { %>
+<h3>You have lost.</h3>
+<% } else if (hangmanState == 8) { %>
+<h3>You have won.</h3>
 <% } else { %>
 <h6>Illegal Hangman State</h6>
 <% } %>
@@ -94,7 +98,7 @@ Wrong letters:<br>
 <%=wrong%><br><br>
 Enter a letter
 <form class="post_form" action="HangmanServlet" method="post">
-	<input id="post_text" name="post_text" type="text" size="1" maxlength="1"/>
+	<input id="post_text" name="post_text" type="text" size="1" maxlength="1" autofocus="autofocus"/>
 	<input type=submit value="Send"/>
 </form>
 <form class="get_reset" action="HangmanServlet" method="get">

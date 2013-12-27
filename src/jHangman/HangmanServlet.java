@@ -37,6 +37,9 @@ public class HangmanServlet extends HttpServlet {
 			e.printStackTrace();
 		}
     	hm.chooseRandomWord();
+    	hm.setUniqueChars(hg.checkUniqueChars(hm.getRandomWord()));
+    	
+    	
     }
     
     protected void communicate(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -69,14 +72,30 @@ public class HangmanServlet extends HttpServlet {
 		if(s.length()==1){
 			char letter = s.charAt(0);
         	hm.setLetter(letter);
-    		String result = hg.gamelogic(hm.getRandomWord(), hm.getHiddenWord(), letter, hm.getHangmanState());
-    		if(result == "false"){
-    			hm.addLetterToWrongLetters(letter);
+        	String result;
+        	if(!hm.getWrongLetters().contains(letter+"")){
+    			result = hg.gamelogic(hm.getRandomWord(), hm.getHiddenWord(), letter, hm.getHangmanState());
+        	} else {
+        		result = "break";
+        	}
+        	switch (result){
+        	case "false":
+        		hm.addLetterToWrongLetters(letter);
     			hm.increaseHangmanState();
-    		} else {
-    			hm.setHiddenWord(result);
-    		}
+    			break;
+        	case "lost":
+        		hm.setHangmanState(7);
+        		break;
+        	case "break":
+        		break;
+        	default:
+        		hm.setHiddenWord(result);
+    			hm.incrementCorrectGuessCount();
+    			if(hm.getCorrectGuessCount() == hm.getUniqueChars())
+    				hm.setHangmanState(8);
+        	}
 		}
+		
 
 //        request.setAttribute("hangmanState", hm.getHangmanState());
 //        request.getRequestDispatcher("HangmanView.jsp").forward(request, response);

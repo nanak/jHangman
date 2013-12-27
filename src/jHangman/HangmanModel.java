@@ -20,6 +20,8 @@ public class HangmanModel {
 	private int hangmanState;
 	private char letter;
 	private ArrayList<String> wordList = new ArrayList<String>();
+	private int correctGuessCount;
+	private int uniqueChars;
 
 	/**
 	 * Liest die wordList ein
@@ -64,6 +66,14 @@ public class HangmanModel {
 	 */
 	public int getHangmanState() {
 		return hangmanState;
+	}
+	
+	/**
+	 * 
+	 * @param hangmanState the hangmanState to set
+	 */
+	public void setHangmanState(int hangmanState){
+		this.hangmanState = hangmanState;
 	}
 
 	/**
@@ -129,16 +139,45 @@ public class HangmanModel {
 	public void increaseHangmanState(){
 		hangmanState++;
 	}
-//	/**
-//	 * 
-//	 * @return the size of the wordlist
-//	 */
-//	public int getSize(){
-//		return size;
-//	}
-	//
-	// @Override
-	// public String toString() {
-	// return ""+hangmanState;
-	// }
+
+	/**
+	 * 
+	 * @param correctGuessCount the current count of correct correctGuessCount
+	 */
+	public void setcorrectGuessCount(int correctGuessCount) {
+		this.correctGuessCount = correctGuessCount;
+	}
+
+	/**
+	 * 
+	 */
+	public void incrementCorrectGuessCount() {
+		correctGuessCount++;
+	}
+	
+	/**
+	 * 
+	 * @return the count of correct guesses
+	 */
+	public int getCorrectGuessCount() {
+		return correctGuessCount;
+	}
+
+	/**
+	 * @return the uniqueChars
+	 */
+	public int getUniqueChars() {
+		return uniqueChars;
+	}
+
+	/**
+	 * 
+	 * @param uniqueChars the number of unique chars
+	 */
+	public void setUniqueChars(int uniqueChars) {
+		this.uniqueChars = uniqueChars;
+	}
+	
+	
+	
 }
