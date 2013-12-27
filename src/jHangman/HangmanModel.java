@@ -12,7 +12,9 @@ public class HangmanModel {
 
 	private String hiddenWord, hiddenDisplay, fileError;
 	private String[] wordList;
-	int size = 0;
+	private int size = 0;
+	private int hangmanState;
+	private char letter;
 
 	/**
 	 * Liest die wordList ein
@@ -34,9 +36,34 @@ public class HangmanModel {
 		System.out.println(size);
 	}
 
+	
+	/**
+	 * 
+	 * @return the wordlist array
+	 */
 	public String[] getWordList() {
 		return wordList;
 	}
 	
+	/**
+	 * 
+	 * @return the current state of the game
+	 */
+	public int getHangmanState(){
+		return hangmanState;
+	}
 	
+	/**
+	 * 
+	 * @param letter the letter to set
+	 */
+	public void setLetter(char letter){
+		this.letter = letter;
+		hangmanState = 1;
+	}
+	
+	@Override
+	public String toString() {
+		return ""+hangmanState;
+	}
 }

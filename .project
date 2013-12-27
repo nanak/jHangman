@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>Aufgabe05-JSP_Webspiel</name>
+	<name>Aufgabe05_JSP-Webspiel</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -33,4 +33,11 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>jHangman</name>
+			<type>2</type>
+			<location>/home/nanak/dev/jeeWorkspace/Aufgabe05_JSP-Webspiel/src/jHangman</location>
+		</link>
+	</linkedResources>
 </projectDescription>

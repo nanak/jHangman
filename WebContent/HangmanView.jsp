@@ -4,85 +4,89 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<basefont face="courier">
-<title>Insert title here</title>
+<style>
+html *
+{
+   font-family: Courier !important;
+}
+</style>
+<title>Se beste Hangman in se W&ouml;rld</title>
 </head>
 <body>
-<%@ page import = "jHangman.HangmanGamelogic" %>
-<%
-HangmanGamelogic hgl = new HangmanGamelogic();
-int hangmanState = hgl.getHangmanState();
-%>
+<h1>Willkommen to se beste Hangman Gejm in se W&ouml;rld!</h1>
+<% int hangmanState = (Integer)request.getAttribute("hangmanState"); %> 
 <% if (hangmanState == 0) { %>
-     _________   <br>
-     |/      |   <br>
-     |           <br>
-     |           <br>
-     |           <br>
-     |           <br>
-     |           <br>
-    _|___        <br>
+&nbsp;_________   <br>
+&nbsp;|/      |   <br>
+&nbsp;|           <br>
+&nbsp;|           <br>
+&nbsp;|           <br>
+&nbsp;|           <br>
+&nbsp;|           <br>
+_|___        <br>
+<% } else if (hangmanState == 1) { %>
+&nbsp;_________   <br>
+&nbsp;|/      |   <br>
+&nbsp;|      (_)  <br>
+&nbsp;|           <br>
+&nbsp;|           <br>
+&nbsp;|           <br>
+&nbsp;|           <br>
+_|___        <br>
+<% } else if (hangmanState == 2) { %>
+&nbsp;_________   <br>
+&nbsp;|/      |   <br>
+&nbsp;|      (_)  <br>
+&nbsp;|       |   <br>
+&nbsp;|       |   <br>
+&nbsp;|           <br>
+&nbsp;|           <br>
+_|___        <br>
+<% } else if (hangmanState == 3) { %>
+&nbsp;_________   <br>
+&nbsp;|/      |   <br>
+&nbsp;|      (_)  <br>
+&nbsp;|      \|   <br>
+&nbsp;|       |   <br>
+&nbsp;|           <br>
+&nbsp;|           <br>
+_|___        <br>
+<% } else if (hangmanState == 4) { %>
+&nbsp;_________   <br>
+&nbsp;|/      |   <br>
+&nbsp;|      (_)  <br>
+&nbsp;|      \|/  <br>
+&nbsp;|       |   <br>
+&nbsp;|           <br>
+&nbsp;|           <br>
+_|___        <br>
+<% } else if (hangmanState == 5) { %>
+&nbsp;_________   <br>
+&nbsp;|/      |   <br>
+&nbsp;|      (_)  <br>
+&nbsp;|      \|/  <br>
+&nbsp;|       |   <br>
+&nbsp;|      /    <br>
+&nbsp;|           <br>
+_|___        <br>
+<% } else if (hangmanState == 6) { %>
+&nbsp;_________   <br>
+&nbsp;|/      |   <br>
+&nbsp;|      (_)  <br>
+&nbsp;|      \|/  <br>
+&nbsp;|       |   <br>
+&nbsp;|      / \  <br>
+&nbsp;|           <br>
+_|___        <br>
+<% } else { %>
+<h6>Illegal Hangman State</h6>
 <% } %>
-<% if (hangmanState == 1) { %>
-     _________   
-     |/      |   
-     |      (_)  
-     |           
-     |           
-     |           
-     |           
-    _|___        
-<% } %>
-<% if (hangmanState == 2) { %>
-     _________   
-     |/      |   
-     |      (_)  
-     |       |   
-     |       |   
-     |           
-     |           
-    _|___        
-<% } %>
-<% if (hangmanState == 3) { %>
-     _________   
-     |/      |   
-     |      (_)  
-     |      \|   
-     |       |   
-     |           
-     |           
-    _|___        
-<% } %>
-<% if (hangmanState == 4) { %>
-     _________   
-     |/      |   
-     |      (_)  
-     |      \|/  
-     |       |   
-     |           
-     |           
-    _|___        
-<% } %>
-<% if (hangmanState == 5) { %>
-     _________   
-     |/      |   
-     |      (_)  
-     |      \|/  
-     |       |   
-     |      /    
-     |           
-    _|___        
-<% } %>
-<% if (hangmanState == 6) { %>
-     _________   
-     |/      |   
-     |      (_)  
-     |      \|/  
-     |       |   
-     |      / \  
-     |           
-    _|___        
-<% } %>
+
+Enter a letter
+<form class="post_form" action="HangmanServlet" method="post">
+	<input id="post_text" name="post_text" type="text" size="1" maxlength="1"/>
+	<input type=submit value="Send"/>
+</form>
 
 </body>
 </html>
