@@ -21,7 +21,7 @@ public class HangmanServlet extends HttpServlet {
      */
     public HangmanServlet() {
         super();
-        HangmanGamelogic hgl = new HangmanGamelogic();
+//        HangmanGamelogic hgl = new HangmanGamelogic();
         HangmanModel hm = new HangmanModel();
 //        hangmanState = hm.getHangmanState();
     }
@@ -40,17 +40,12 @@ public class HangmanServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String s = (request.getParameter("post_text"));
-		char letter = s.charAt(0);
-        hm.setLetter(letter);
-        try {
-            Thread.sleep(10);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-            return;
-        }
+		if(s.length()==1){
+			char letter = s.charAt(0);
+        	hm.setLetter(letter);
+		}
 //        response.sendRedirect("HangmanView.jsp");
-        System.out.println(request);
-        System.out.println(response);
+        request.setAttribute("hangmanState", hm.getHangmanState());
         request.getRequestDispatcher("HangmanView.jsp").forward(request, response);
 	}
 	

@@ -10,74 +10,77 @@ html *
    font-family: Courier !important;
 }
 </style>
-<title>Se beste Hangman in se W&ouml;rld</title>
+<title>Se beste Hangman in se W&ouml;ald</title>
 </head>
 <body>
 <h1>Willkommen to se beste Hangman Gejm in se W&ouml;rld!</h1>
-<% int hangmanState = (Integer)request.getAttribute("hangmanState"); %> 
+<% 
+//int hangmanState = (Integer)request.getAttribute("hangmanState"); 
+int hangmanState=Integer.parseInt(request.getAttribute("hangmanState").toString());
+%> 
 <% if (hangmanState == 0) { %>
 &nbsp;_________   <br>
-&nbsp;|/      |   <br>
-&nbsp;|           <br>
-&nbsp;|           <br>
-&nbsp;|           <br>
-&nbsp;|           <br>
-&nbsp;|           <br>
-_|___        <br>
+&nbsp;|/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+&nbsp;|<br>
+&nbsp;|<br>
+&nbsp;|<br>
+&nbsp;|<br>
+&nbsp;|<br>
+_|___<br>
 <% } else if (hangmanState == 1) { %>
 &nbsp;_________   <br>
-&nbsp;|/      |   <br>
-&nbsp;|      (_)  <br>
-&nbsp;|           <br>
-&nbsp;|           <br>
-&nbsp;|           <br>
-&nbsp;|           <br>
-_|___        <br>
+&nbsp;|/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(_)<br>
+&nbsp;|<br>
+&nbsp;|<br>
+&nbsp;|<br>
+&nbsp;|<br>
+_|___<br>
 <% } else if (hangmanState == 2) { %>
 &nbsp;_________   <br>
-&nbsp;|/      |   <br>
-&nbsp;|      (_)  <br>
-&nbsp;|       |   <br>
-&nbsp;|       |   <br>
-&nbsp;|           <br>
-&nbsp;|           <br>
-_|___        <br>
+&nbsp;|/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(_)<br>
+&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+&nbsp;|<br>
+&nbsp;|<br>
+_|___<br>
 <% } else if (hangmanState == 3) { %>
 &nbsp;_________   <br>
-&nbsp;|/      |   <br>
-&nbsp;|      (_)  <br>
-&nbsp;|      \|   <br>
-&nbsp;|       |   <br>
-&nbsp;|           <br>
-&nbsp;|           <br>
-_|___        <br>
+&nbsp;|/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(_)<br>
+&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\|<br>
+&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+&nbsp;|<br>
+&nbsp;|<br>
+_|___<br>
 <% } else if (hangmanState == 4) { %>
 &nbsp;_________   <br>
-&nbsp;|/      |   <br>
-&nbsp;|      (_)  <br>
-&nbsp;|      \|/  <br>
-&nbsp;|       |   <br>
-&nbsp;|           <br>
-&nbsp;|           <br>
-_|___        <br>
+&nbsp;|/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(_)<br>
+&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\|/<br>
+&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+&nbsp;|<br>
+&nbsp;|<br>
+_|___<br>
 <% } else if (hangmanState == 5) { %>
 &nbsp;_________   <br>
-&nbsp;|/      |   <br>
-&nbsp;|      (_)  <br>
-&nbsp;|      \|/  <br>
-&nbsp;|       |   <br>
-&nbsp;|      /    <br>
-&nbsp;|           <br>
-_|___        <br>
+&nbsp;|/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(_)<br>
+&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\|/<br>
+&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/<br>
+&nbsp;|<br>
+_|___<br>
 <% } else if (hangmanState == 6) { %>
 &nbsp;_________   <br>
-&nbsp;|/      |   <br>
-&nbsp;|      (_)  <br>
-&nbsp;|      \|/  <br>
-&nbsp;|       |   <br>
-&nbsp;|      / \  <br>
-&nbsp;|           <br>
-_|___        <br>
+&nbsp;|/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(_)<br>
+&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\|/<br>
+&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/ \<br>
+&nbsp;|<br>
+_|___<br>
 <% } else { %>
 <h6>Illegal Hangman State</h6>
 <% } %>

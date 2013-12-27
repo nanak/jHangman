@@ -59,7 +59,6 @@ public class HangmanModel {
 	 */
 	public void setLetter(char letter){
 		this.letter = letter;
-		hangmanState = 1;
 	}
 	
 	@Override
