@@ -12,7 +12,9 @@ import java.util.Scanner;
  */
 public class HangmanModel {
 
-	private String hiddenWord, randomWord, wrongLetters;
+	private String hiddenWord = "";
+	private String randomWord = "";
+	private String wrongLetters = "";
 //	private String[] wordList;
 //	private int size;
 	private int hangmanState;
@@ -119,6 +121,13 @@ public class HangmanModel {
 	 */
 	public String getRandomWord(){
 		return randomWord;
+	}
+	
+	/**
+	 * Increments the current hangman state
+	 */
+	public void increaseHangmanState(){
+		hangmanState++;
 	}
 //	/**
 //	 * 

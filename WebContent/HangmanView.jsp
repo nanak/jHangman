@@ -16,6 +16,8 @@ html *
 <h1>Willkommen to se beste Hangman Gejm in se W&ouml;ald!</h1>
 <% 
 int hangmanState=Integer.parseInt(request.getAttribute("hangmanState").toString());
+String word = request.getAttribute("hiddenWord").toString();
+String wrong = request.getAttribute("wrongLetters").toString();
 %> 
 <% if (hangmanState == 0) { %>
 &nbsp;_________   <br>
@@ -84,16 +86,18 @@ _|___<br>
 <h6>Illegal Hangman State</h6>
 <% } %>
 
-<% String word = request.getAttribute("hiddenWord").toString();%>
 
 <%=word%>
 <br>
 <br>
+Wrong letters:<br>
+<%=wrong%><br><br>
 Enter a letter
 <form class="post_form" action="HangmanServlet" method="post">
 	<input id="post_text" name="post_text" type="text" size="1" maxlength="1"/>
 	<input type=submit value="Send"/>
 </form>
+	<input type="submit" value="Reset" action="HangmanServlet" id="post_reset"/>
 
 </body>
 </html>

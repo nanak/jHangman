@@ -63,13 +63,17 @@ public class HangmanServlet extends HttpServlet {
 		if(s.length()==1){
 			char letter = s.charAt(0);
         	hm.setLetter(letter);
-    		String result = hg.gamelogic(hm.getRandomWord(), letter);
+    		String result = hg.gamelogic(hm.getRandomWord(), hm.getHiddenWord(), letter, hm.getHangmanState());
     		if(result == "false"){
     			hm.addLetterToWrongLetters(letter);
+    			hm.increaseHangmanState();
     		} else {
     			hm.setHiddenWord(result);
     		}
 		}
+		String isReset = (request.getParameter("post_reset"));
+		if(isReset != null && isReset == "Reset")
+			this.initialize();
 
 //        request.setAttribute("hangmanState", hm.getHangmanState());
 //        request.getRequestDispatcher("HangmanView.jsp").forward(request, response);
